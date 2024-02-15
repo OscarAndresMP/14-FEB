@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --dot-bg: rgba(255, 2, 145, 0.589);
+    --dot-color: white;
+    --dot-size: 1px;
+    --dot-space: 22px;
+    background:
+        linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        var(--dot-color);
+}
+
+.contenedor{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    place-items: center;
+    grid-template-areas:
+    "flower carta flower1"
+    ". carta ."
+    ". carta .";
+}
+
+.carta{
+    width: 55%;
+    height: 80%;
+    background: #0f0f12f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: -10px 10px 90px 15px #070303;
+    grid-area: carta;
+    border-radius: 10%;
+    border: 3px solid #000000;
+    cursor: none;
+}
+
+.cabeza{
+    width: 100%;
+    height: 50%;
+    margin-top: 10px;
+    background: -webkit-radial-gradient(center, circle, #401f13 0%, transparent, transparent);
+    z-index: 1;
+    rotate: 6deg;
+    cursor: none;
+    animation: girar 5s linear infinite;
+}
+
+@keyframes girar{
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+.cabeza .petalosb{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabeza .petalosf{
+    position: relative;
+    top: -100%;
+    left: 10%;
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabeza .petalosb > div{
+    position: absolute;
+    margin: 10%;
+    width: 100%;
+    height: 18%;
+    background: -webkit-radial-gradient(center, circle, transparent 30%, #fa8401, #fbe73c 100%);
+
+    border-top-right-radius: 100%;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 25%;
+    transform: rotate(calc(29deg*var(--1)));
+}
+.cabeza .petalosf > div{
+    position: absolute;
+    width: 100%;
+    height: 18%;
+    background: -webkit-radial-gradient(center, circle, transparent 30%, #fa8401, #fbe73c 100%);
+
+    border-top-right-radius: 100%;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 25%;
+    transform: rotate(calc(36deg*var(--1)));
+}
+
+.tallo{
+    position: relative;
+    width: 6%;
+    height: 60%;
+    top: -8%;
+    background:linear-gradient(to left,#437849 30%,#1e8c38, #23af4a);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+
+.mensaje{
+    position: relative;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    width: 1500%;
+    top: 30%;
+    right: 700%;
+    animation: glow 2.5s linear infinite;
+    
+
+}
+
+@keyframes glow{
+    0%, 100%{
+        color: #fff;
+        text-shadow: 0 0 12px #00ff99, 0 0 50px #00ff99, 0 0 100px #00ff99;
+        
+    }
+    10%, 40%{
+        color: #393838;
+        text-shadow: none;
+    }
+}
+
+
+.flower{
+    width: 40px;
+    height: 40px;
+    animation: giro 4s linear infinite;
+    grid: flower;
+    margin-top: 100px;
+}
+#flower1{
+    grid-area: flower1;
+}
+
+.leaf{
+    position: absolute;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    background: -webkit-radial-gradient(center, circle, #fbe401, #ffb623 100%);
+    border-radius: 2px 50px;
+    opacity: 0.4;
+    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.51);
+}
+
+.dot{
+    position: absolute;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    background: -webkit-radial-gradient(center, circle, #401f13 50%, transparent, transparent);
+    border-radius: 50%;
+    animation: dot 4s ease-in-out infinite;
+}
+
+.leaf-0{
+    transform: rotate(0deg) translate(-35px, -35px) scale(2);
+}
+
+.leaf-1{
+    transform: rotate(22.5deg) translate(-35px, -35px) scale(2);
+}
+
+.leaf-2{
+    transform: rotate(45deg) translate(-35px, -35px) scale(2);
+}
+.leaf-3{
+    transform: rotate(67.5deg) translate(-35px, -35px) scale(2);
+}
+.leaf-4{
+    transform: rotate(90deg) translate(-35px, -35px) scale(2);
+}
+.leaf-5{
+    transform: rotate(112.5deg) translate(-35px, -35px) scale(2);
+}
+.leaf-6{
+    transform: rotate(135deg) translate(-35px, -35px) scale(2);
+}
+.leaf-7{
+    transform: rotate(157.5deg) translate(-35px, -35px) scale(2);
+}
+.leaf-8{
+    transform: rotate(180deg) translate(-35px, -35px) scale(2);
+}
+.leaf-9{
+    transform: rotate(202.5deg) translate(-35px, -35px) scale(2);
+}
+
+.leaf-10{
+    transform: rotate(225deg) translate(-35px, -35px) scale(2);
+}
+.leaf-11{
+    transform: rotate(247.5deg) translate(-35px, -35px) scale(2);
+}
+.leaf-12{
+    transform: rotate(270deg) translate(-35px, -35px) scale(2);
+}
+.leaf-13{
+    transform: rotate(292.5deg) translate(-35px, -35px) scale(2);
+}
+.leaf-14{
+    transform: rotate(315deg) translate(-35px, -35px) scale(2);
+}
+.leaf-15{
+    transform: rotate(337.5deg) translate(-35px, -35px) scale(2);
+}
+
+@keyframes giro{
+    0%{
+        transform: scale(0) translate(-35px, -35px);
+    }
+    30%{
+        transform: scale(1) rotate(50deg);
+    }
+    70%{
+        transform: scale(1) rotate(100deg);
+    }
+    80%{
+        transform: scale(1) rotate(180deg);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+
+@keyframes dot{
+    0%,12%{
+        transform: scale(0);
+    }
+    20%{
+        transform: scale(1.5);
+    }
+    25%{
+        transform: scale(1.5);
+    }
+    30%,55%{
+        transform: scale(2);
+    }
+    58%{
+        transform: scale(1.5);
+    }
+    70%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+
+@media (max-width:480px){
+    .contenedor{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        place-items: center;
+        grid-template-areas:
+        "flower . flower1 "
+        "carta carta carta"
+        "carta carta carta";
+    }
+}
+@media (max-width:1025px){
+    .contenedor{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        place-items: center;
+        grid-template-areas:
+        "flower . flower1 "
+        "carta carta carta"
+        "carta carta carta";
+    }
+    .carta{
+        width: 40%;
+        height: 90%;
+    }
+}
